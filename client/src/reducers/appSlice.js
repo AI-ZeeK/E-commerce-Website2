@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
 	isSignUp: false,
+	isNavOpen: false,
 };
 
 const appSlice = createSlice({
@@ -11,9 +12,12 @@ const appSlice = createSlice({
 		setIsSignUp: (state) => {
 			state.isSignUp = !state.isSignUp;
 		},
+		setIsNavOpen: (state) => {
+			state.isNavOpen = !state.isNavOpen;
+		},
 	},
 });
 
-export const { setIsSignUp } = appSlice.actions;
+export const { setIsSignUp, setIsNavOpen } = appSlice.actions;
 
 export default appSlice.reducer;

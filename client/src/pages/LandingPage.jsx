@@ -1,7 +1,7 @@
 import React from "react";
 import shoe from "../assets/shoe.png";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { CiSearch, CiShoppingCart } from "react-icons/ci";
@@ -9,8 +9,10 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { HiBars3BottomLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
 import midBg from "../assets/drake.png";
 import testBg from "../assets/danie.jpg";
+import { setIsNavOpen } from "../reducers/appSlice";
 
 const LandingPage = () => {
+	const { isNavOpen } = useSelector((store) => store.app);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -18,13 +20,17 @@ const LandingPage = () => {
 		navigate("/auth");
 	};
 
+	const openNav = () => {
+		dispatch(setIsNavOpen());
+	};
+
 	return (
 		<motion.div className="landing-section">
 			<div className="landing-header p-width  ">
-				<div className="mobile-nav">
+				<div className="mobile-nav" onClick={openNav}>
 					<HiBars3BottomLeft />
 				</div>
-				<ul className="side-col left">
+				<ul className={isNavOpen ? "side-col left active" : "side-col left"}>
 					<li>Home</li>
 					<li>Pages</li>
 					<li>Shop</li>
@@ -162,7 +168,7 @@ const LandingPage = () => {
 							<div className="sub-link">
 								<p>Subscribe to the newsletter</p>
 								<div className="input">
-									<input type="text" placeholder="Your Email" />
+									<input type="email" placeholder="Your Email" />
 									<HiOutlineArrowLongRight className="icon" />
 								</div>
 							</div>

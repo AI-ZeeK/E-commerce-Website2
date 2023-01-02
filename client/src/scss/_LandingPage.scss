@@ -16,17 +16,22 @@
 		padding-inline: 2rem;
 	}
 	.landing-header {
-		// position: relative;
+		position: fixed;
+		z-index: 80;
+		top: 4r0em;
+		left: 0;
 		background-color: white;
+		width: 100%;
 		// color: #29abe2;
 		font-size: 2rem;
 		padding-block: 0.6rem;
-		height: 100%;
+		// height: 100%;
 		gap: 4rem;
 		display: grid;
 		grid-template-columns: 4fr 1fr 4fr;
 		justify-content: space-between;
 		align-items: center;
+		// background-color: red;
 		.mobile-nav,
 		.mobile-cart {
 			display: none;
@@ -39,7 +44,7 @@
 			justify-content: center;
 			align-items: center;
 			gap: 0.5rem;
-			color: #0d2a3c;
+			color: #000;
 
 			strong {
 				font-family: "Passions Conflict", cursive !important;
@@ -69,6 +74,8 @@
 
 			li {
 				cursor: pointer;
+				transition: 200ms ease;
+				scale: 1;
 				&:hover {
 					color: #ff7a8c;
 				}
@@ -98,6 +105,7 @@
 		background-color: #ffffff;
 		height: 34rem;
 		display: flex;
+		margin-top: 5rem;
 		// grid-template-columns: 1fr 1fr;
 		color: #000;
 		overflow: hidden;
@@ -285,6 +293,11 @@
 			// background-color: red;
 			object-fit: cover;
 			overflow: hidden;
+			transition: all 300ms ease;
+			&:hover {
+				box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+					rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+			}
 			img {
 				width: 100%;
 				// height: 100%;
@@ -524,6 +537,7 @@ a:hover {
 		display: flex !important;
 		padding-block: 0.2rem !important;
 		padding-inline: 1rem !important;
+		position: relative;
 
 		.mobile-nav,
 		.mobile-cart {
@@ -554,12 +568,46 @@ a:hover {
 				font-size: 1rem;
 			}
 		}
-		.side-col {
+		.side-col.right {
 			display: none !important;
+		}
+
+		.side-col.left {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 0;
+			max-height: 0;
+			left: 0;
+			top: 54px;
+			width: 100%;
+			background-color: #fff;
+			z-index: 20;
+			font-size: 1.2rem;
+			box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+				rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+			opacity: 0;
+			transition: all 300ms ease;
+
+			li {
+				opacity: 0;
+			}
+
+			&.active {
+				height: 50vh;
+				max-height: 100vh;
+				opacity: 1;
+				li {
+					opacity: 1;
+				}
+			}
 		}
 	}
 
 	.landing-banner {
+		margin-top: 3.6rem !important;
 		.left-body {
 			padding: 2rem !important;
 			position: relative;
@@ -598,8 +646,27 @@ a:hover {
 			width: 100% !important;
 		}
 	}
+
+	.testimonial-sect {
+		padding: 6rem 1rem !important;
+		grid-template-columns: 1fr !important;
+		gap: 2rem;
+	}
+
+	.social-sect {
+		padding-block: 2rem !important;
+		.soc-texts {
+			.head-font {
+				font-size: 3rem !important;
+			}
+			p {
+				font-size: 1.4rem !important;
+			}
+		}
+	}
 	.landing-footer {
 		padding-block: 6rem !important;
+		padding-inline: 1rem !important;
 		.footer-top {
 			padding: 1rem !important;
 			display: flex !important;
@@ -614,6 +681,10 @@ a:hover {
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				width: 100%;
+				div {
+					width: 100%;
+				}
 			}
 		}
 
@@ -626,6 +697,10 @@ a:hover {
 				width: 100% !important;
 			}
 		}
+	}
+
+	.head-font {
+		font-size: 3rem !important;
 	}
 }
 

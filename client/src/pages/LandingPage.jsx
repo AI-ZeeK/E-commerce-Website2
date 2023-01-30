@@ -9,6 +9,19 @@ import { BsArrowUpRight } from "react-icons/bs";
 import { HiBars3BottomLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
 import midBg from "../assets/drake.png";
 import testBg from "../assets/danie.jpg";
+import chair1 from "../assets/furniture2.png";
+import lamp1 from "../assets/philippe.png";
+import lamp2 from "../assets/phil.png";
+import linh from "../assets/linh.png";
+import linh2 from "../assets/linh-le.png";
+import kettle from "../assets/andrew.png";
+import stool1 from "../assets/brandon.png";
+import clock from "../assets/julia.png";
+import stool2 from "../assets/maly.png";
+import lamp3 from "../assets/natalia.png";
+import chair2 from "../assets/images.png";
+import vase1 from "../assets/czapp.png";
+
 import { setIsNavOpen } from "../reducers/appSlice";
 
 const LandingPage = () => {
@@ -36,6 +49,9 @@ const LandingPage = () => {
 					<li>Shop</li>
 					<li>Blog</li>
 					<li>Contact</li>
+					<li className={isNavOpen ? "show" : "mobile"}>
+						<Link className="btn">Admin Sign in</Link>
+					</li>
 				</ul>
 				<div className="header-logo">
 					<strong>Finite</strong>
@@ -74,6 +90,8 @@ const LandingPage = () => {
 					<div className="bord-box-b"></div>
 					<div className="small-circle1"></div>
 					<div className="small-circle2"></div>
+					<div className="small-box"></div>
+					<div className="small-box2"></div>
 					<div className="small-boxes"></div>
 					<div className="img-box">
 						<img src={midBg} alt="" />
@@ -104,15 +122,129 @@ const LandingPage = () => {
 					<div className="">
 						<h1 className="head-font"> Feautured Collections</h1>
 					</div>
-					<div className="bord-box"></div>
+					<div className="items-div">
+						<div className="items-box">
+							<div className="image-box">
+								<img src={lamp1} alt="chair image" />
+							</div>
+							<div className="items-desc">
+								<strong>Roof Lamp </strong>
+								<small> $2800</small>
+							</div>
+						</div>
 
+						<div className="items-box">
+							<div className="image-box">
+								<img src={chair1} alt="chair image" />
+							</div>
+							<div className="items-desc">
+								<strong>Cool Chair </strong>
+								<small> $1200</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="image-box">
+								<img src={linh} alt="chair image" />
+							</div>
+							<div className="items-desc">
+								<strong>Plant Vase</strong>
+								<small> $800</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="image-box">
+								<img src={lamp2} alt="chair image" />
+							</div>
+							<div className="items-desc">
+								<strong>Rose holdback </strong> <small> $1400</small>
+							</div>
+						</div>
+					</div>
+
+					<div className="bord-box"></div>
 					<div className="bord-box-b"></div>
 				</div>
 			</div>
 			<div className="p-width">
 				<div className="popular-sect">
-					<div className="">
+					<div className="popular-header">
+						<div className="bord-box"></div>
+						<div className="bord-box-b"></div>
 						<h1 className="head-font"> Popular Collections</h1>
+					</div>
+					<div className="items-block">
+						<div className="items-box">
+							<div className="items-image">
+								<img src={kettle} alt="" />
+							</div>
+							<div className="items-info">
+								<strong>Kettle</strong>
+								<small>$120.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={linh2} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Flower Vase</strong>
+								<small>$220.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={stool2} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Deco Accessory</strong>
+								<small>$40.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={clock} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Wall Clock</strong>
+								<small>$180.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={chair2} alt="" />
+							</div>
+							<div className="items-info">
+								<strong>Kayl Sofa</strong>
+								<small>$3000.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={stool1} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Side Stool</strong>
+								<small>$220.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={vase1} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Vase Accessory</strong>
+								<small>$640.00</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="items-image">
+								<img src={lamp3} alt="" />{" "}
+							</div>
+							<div className="items-info">
+								<strong>Chu Lamp</strong>
+								<small>$930.00</small>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

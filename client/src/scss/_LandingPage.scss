@@ -966,6 +966,9 @@ a:hover {
 
 @include medium-screen {
 	.landing-header {
+		// .side-col.left {
+		// 	display: none !important;
+		// }
 		.mobile-nav {
 			display: flex !important;
 			justify-content: center;
@@ -981,14 +984,110 @@ a:hover {
 			&:hover {
 				color: #29abe2;
 			}
-
 			&:active {
 				scale: 0.98;
 			}
 		}
+		.header-logo {
+			transform: translateY(4px) !important;
+
+			gap: 0 !important;
+			strong {
+				font-size: 3rem !important;
+			}
+			small {
+				font-size: 1rem;
+			}
+		}
+		// .side-col.right {
+		// 	display: none !important;
+		// }
 
 		.side-col.left {
-			display: none !important;
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			height: 100vh;
+			max-height: 100vh;
+			left: 0;
+			top: 64px;
+			width: 0;
+			background-color: #fff;
+			z-index: 20;
+			font-size: 1.2rem;
+			box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+				rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+			opacity: 0;
+			transition: opacity 300ms 200ms ease, all 500ms 400ms ease;
+
+			li {
+				opacity: 0;
+				transform: translateX(-10rem);
+				transition: opacity 500ms 200ms ease, all 500ms ease;
+
+				&:nth-child(2) {
+					transition-delay: 100ms;
+				}
+				&:nth-child(3) {
+					transition-delay: 200ms;
+				}
+				&:nth-child(4) {
+					transition-delay: 300ms;
+				}
+				&:nth-child(5) {
+					transition-delay: 400ms;
+				}
+				&:nth-child(6) {
+					transition-delay: 500ms;
+				}
+			}
+
+			&.active {
+				height: 100vh;
+				max-height: 100vh;
+				opacity: 1;
+				width: 100%;
+				transition: opacity 500ms 400ms ease;
+				transition: all 300ms ease;
+				li {
+					opacity: 1;
+					transform: translateX(0);
+					transition: opacity 500ms 400ms ease;
+					transition: all 500ms ease;
+					// &:nth-child(2) {
+					// 	transition-delay: 100ms;
+					// }
+					// &:nth-child(3) {
+					// 	transition-delay: 200ms;
+					// }
+					// &:nth-child(4) {
+					// 	transition-delay: 300ms;
+					// }
+					// &:nth-child(5) {
+					// 	transition-delay: 400ms;
+					// }
+					// &:nth-child(6) {
+					// 	transition-delay: 500ms;
+					// }
+				}
+
+				.show {
+					// display: block !important;
+				}
+			}
+
+			.btn {
+				outline: 1px solid black;
+				padding: 1rem 2rem;
+				color: #000;
+
+				&:hover {
+					background-color: #000 !important;
+					color: #fff !important;
+				}
+			}
 		}
 	}
 

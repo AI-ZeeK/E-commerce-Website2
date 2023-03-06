@@ -151,10 +151,11 @@ body.dark .modal::after {
 	gap: 1rem;
 	border: 1px solid #333;
 	/* width: 18rem; */
-	box-shadow: 2px 2px 1px 2px var(--box1-shadow);
+	box-shadow: 2px 2px 2px 0px var(--box1-shadow);
 	cursor: pointer;
 	transition: 300ms ease;
 	/* background-color: var(--darker-color); */
+	overflow: hidden;
 }
 .cart-section-items {
 	padding: 1rem;
@@ -181,6 +182,16 @@ body.dark .modal::after {
 	grid-column: span 2;
 } */
 
+.cart-section-block{
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	border: 1px solid red;
+	width: 100vw;
+	padding: 6rem 2rem 2rem;
+	place-items: center;
+}
+
 .cart-full-width {
 	width: 100%;
 }
@@ -198,7 +209,7 @@ body.dark .modal::after {
 	padding: 1rem;
 	align-items: center;
 	justify-content: center;
-	border-bottom: 2px solid var(--lighter-color);
+	border-bottom: 2px solid grey;
 }
 
 .cart-table .cart-table-body .cart-table-row .cart-item-image {
@@ -206,6 +217,39 @@ body.dark .modal::after {
 	height: 10rem;
 	overflow: hidden;
 	transition: 300ms ease;
+}
+@media screen and (max-width:540px) {
+	.cart-table .cart-table-head .cart-table-row,
+.cart-table .cart-table-body .cart-table-row {
+	display: grid;
+	grid-template-columns: 2.5fr 1fr 2fr 1fr;
+	gap: 0.1rem;
+	padding:0.8rem  0.2rem;
+	place-items:center !important;
+}
+.item-number {
+	padding: 0.2rem !important;
+	border: none;
+	outline: none;
+	text-align: center;
+	font-size: 0.7rem !important;
+	width: 2rem !important;
+	position: relative;
+}
+	
+.cart-table .cart-table-body .cart-table-row .cart-item-image {
+	width: 4rem;
+	height: 4rem;
+
+	}
+	.cart-table .cart-table-body .cart-table-row .cart-item-quantity .btn {
+	font-size: 0.7rem !important;
+	padding: 0.2rem 0.8rem !important;
+	background-color: field;
+	color: #fff;
+	border: none;
+	white-space: nowrap
+}
 }
 .cart-table .cart-table-body .cart-table-row .cart-table-item {
 	text-align: center;
@@ -266,6 +310,8 @@ body.dark .modal::after {
 	object-fit: contain;
 	transition: 300ms ease;
 	padding: 0.2rem;
+	
+
 }
 .cart-section-items
 	.cart-table-body
@@ -307,7 +353,7 @@ body.dark .modal::after {
 
 .item-image {
 	height: 20rem;
-	width: 20rem;
+	width: 100%;
 	overflow: hidden;
 }
 

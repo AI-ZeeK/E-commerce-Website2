@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CartDetails from "../components/CartDetails";
+import Navbar from "../components/Navbar";
+
 import { clearCart, handleSuccess } from "../reducers/cartSlice";
 
 const Cart = () => {
@@ -11,7 +13,7 @@ const Cart = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	if (!cart.length) {
-		navigate("/");
+		navigate("/app");
 	}
 	const handleClearCart = () => {
 		dispatch(clearCart());
@@ -22,6 +24,8 @@ const Cart = () => {
 	};
 
 	return (
+		<>
+		<Navbar />
 		<div className="cart-section">
 			<div className="cart-page">
 				{!cart.length ? (
@@ -114,6 +118,7 @@ const Cart = () => {
 				""
 			)} */}
 		</div>
+		</>
 	);
 };
 

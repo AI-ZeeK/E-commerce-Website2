@@ -10,8 +10,10 @@ import { HiBars3BottomLeft, HiOutlineArrowLongRight } from "react-icons/hi2";
 import midBg from "../assets/drake.png";
 import testBg from "../assets/danie.jpg";
 import chair1 from "../assets/furniture2.png";
+import chair2 from "../assets/furniture1.png";
 import lamp1 from "../assets/philippe.png";
 import lamp2 from "../assets/phil.png";
+import chair3 from "../assets/kelly.png";
 import linh from "../assets/linh.png";
 import linh2 from "../assets/linh-le.png";
 import kettle from "../assets/andrew.png";
@@ -19,7 +21,7 @@ import stool1 from "../assets/brandon.png";
 import clock from "../assets/julia.png";
 import stool2 from "../assets/maly.png";
 import lamp3 from "../assets/natalia.png";
-import chair2 from "../assets/images.png";
+import chair4 from "../assets/images.png";
 import vase1 from "../assets/czapp.png";
 
 import { setIsNavOpen } from "../reducers/appSlice";
@@ -44,12 +46,12 @@ const LandingPage = () => {
 					<HiBars3BottomLeft />
 				</div>
 				<ul className={isNavOpen ? "side-col left active" : "side-col left"}>
-					<li>Home</li>
-					<li>Pages</li>
-					<li>Shop</li>
-					<li>Blog</li>
-					<li>Contact</li>
-					<li className={isNavOpen ? "show" : "mobile"}>
+					<li onClick={openNav}>Home</li>
+					<li onClick={openNav}>Pages</li>
+					<li onClick={openNav}>Shop</li>
+					<li onClick={openNav}>Blog</li>
+					<li onClick={openNav}>Contact</li>
+					<li className={isNavOpen ? "show adm" : "mobile adm"}>
 						<Link className="btn">Admin Sign in</Link>
 					</li>
 				</ul>
@@ -81,7 +83,7 @@ const LandingPage = () => {
 						<span>Peace</span>
 					</div>
 					<div className="btn-box">
-						<Link to={"/auth"}>
+						<Link to={"/app"}>
 							<span>Shop Now</span> <BsArrowUpRight className="icon" />
 						</Link>
 					</div>
@@ -144,19 +146,19 @@ const LandingPage = () => {
 						</div>
 						<div className="items-box">
 							<div className="image-box">
+								<img src={lamp2} alt="chair image" />
+							</div>
+							<div className="items-desc">
+								<strong>Rose holdback </strong> <small> $1400</small>
+							</div>
+						</div>
+						<div className="items-box">
+							<div className="image-box">
 								<img src={linh} alt="chair image" />
 							</div>
 							<div className="items-desc">
 								<strong>Plant Vase</strong>
 								<small> $800</small>
-							</div>
-						</div>
-						<div className="items-box">
-							<div className="image-box">
-								<img src={lamp2} alt="chair image" />
-							</div>
-							<div className="items-desc">
-								<strong>Rose holdback </strong> <small> $1400</small>
 							</div>
 						</div>
 					</div>
@@ -271,12 +273,31 @@ const LandingPage = () => {
 					<div className="bord-box-b"></div>
 				</div>
 			</div>
-			<div className="p-width">
+			<div className="p-width p-block">
 				<div className="social-sect">
 					<div className="soc-texts">
 						<h1 className="head-font"> INSTAGRAM</h1>
 						<p>#brisa</p>
 					</div>
+					<div className="items-block">
+						<div className="items-box">
+							<img src={chair2} alt="" />
+						</div>
+						<div className="items-box">
+							<img src={linh2} alt="" />
+						</div>
+						<div className="items-box">
+							<img src={lamp3} alt="" />
+						</div>
+						<div className="items-box">
+							<img src={chair3} alt="" />
+						</div>
+						<div className="items-box">
+							<img src={stool2} alt="" />
+						</div>
+					</div>
+					<div className="bord-box"></div>
+					<div className="bord-box-b"></div>
 				</div>
 			</div>
 			<div className="p-width">

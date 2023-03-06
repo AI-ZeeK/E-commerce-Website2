@@ -39,7 +39,7 @@ const Navbar = () => {
 				Lorem Project{" "}
 			</Link>
 			<Link to="/app/cart" className="cart-icon-detail">
-				<ShoppingCartCheckoutIcon style={{ fontSize: "2rem" }} />
+				<ShoppingCartCheckoutIcon style={{ fontSize: "1.4rem" }} />
 				{totalAmount >= 1 ? (
 					<div className="total-amount">{totalAmount}</div>
 				) : (

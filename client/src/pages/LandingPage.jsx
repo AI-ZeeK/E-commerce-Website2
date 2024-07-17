@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import shoe from "../assets/shoe.png";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,24 +24,36 @@ import lamp3 from "../assets/natalia.png";
 import chair4 from "../assets/images.png";
 import vase1 from "../assets/czapp.png";
 
-import { setIsNavOpen } from "../reducers/appSlice";
+import { setIsNavOpen, closeSubNav } from "../reducers/appSlice";
 
 const LandingPage = () => {
   const { isNavOpen } = useSelector((store) => store.app);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const bodyRef = useRef();
   const handleShopClick = () => {
     navigate("/auth");
   };
+  const handleClickOutside = (event) => {
+    if (bodyRef.current && !bodyRef.current.contains(event.target)) {
+      dispatch(closeSubNav());
+    }
+  };
 
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [handleClickOutside]);
   const openNav = () => {
     dispatch(setIsNavOpen());
   };
 
   return (
     <motion.div className="landing-section">
-      <div className="landing-header p-width  ">
+      <div ref={bodyRef} className="landing-header p-width  ">
         <div className="mobile-nav" onClick={openNav}>
           <HiBars3BottomLeft />
         </div>
